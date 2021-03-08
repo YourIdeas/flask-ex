@@ -1,0 +1,24 @@
+swagger: "2.0"
+info:
+  description: "Test CP4D"
+  version: "1.0.0"
+  title: "TEST CP4D"
+host: "localhost:8080"
+basePath: "/"
+paths:
+  /test:
+    get:
+      tags:
+      - "test"
+      summary: "Check test's status"
+      description: ""
+      operationId: "home"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        "200":
+          description: "Status displayed"
