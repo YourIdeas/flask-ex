@@ -6,6 +6,23 @@ from werkzeug.contrib.fixers import ProxyFix
 
 from app.extensions import db
 
+SWAGGER_URL = '/swagger'  # URL for exposing Swagger UI (without trailing '/')
+API_URL = '/static/swagger.yml'
+
+# Call factory function to create our blueprint
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,  # Swagger UI static files will be mapped to '{SWAGGER_URL}/dist/'
+    API_URL,
+    config={  # Swagger UI config overrides
+        'app_name': "Test feature application"
+    })
+
+app.register_blueprint(swaggerui_blueprint)
+
+
+@app.route('/test', methods=['GET'])
+def home():
+    return "<h1>Distant Reading Archive</h1><p>This site is a prototype API for distant reading of science fiction novels.</p>"
 
 def create_app(config_filename):
     """
