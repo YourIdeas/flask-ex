@@ -5,6 +5,8 @@ EXPOSE 8080
 USER 1001
 
 RUN pip install --upgrade pip
+RUN pip install flask_swagger_ui
+RUN pip install flasgger
 
 # Install pip requirements
 ADD requirements.txt /opt/app-root/src/requirements.txt
