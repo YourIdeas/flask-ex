@@ -7,7 +7,7 @@ from werkzeug.contrib.fixers import ProxyFix
 from app.extensions import db
 
 SWAGGER_URL = '/swagger'  # URL for exposing Swagger UI (without trailing '/')
-API_URL = '/static/swagger.yml'
+API_URL = '/app/static/swagger.yml'
 
 # Call factory function to create our blueprint
 swaggerui_blueprint = get_swaggerui_blueprint(
